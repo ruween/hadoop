@@ -150,6 +150,7 @@ public class HostsFileReader {
     DocumentBuilderFactory builder = DocumentBuilderFactory.newInstance();
     try {
       DocumentBuilder db = builder.newDocumentBuilder();
+      builder.set.Feature("http://apache.org/xml/features/disallowdoctype-decl", true);
       dom = db.parse(fileInputStream);
       // Examples:
       // <host><name>host1</name></host>
