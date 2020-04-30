@@ -475,6 +475,7 @@ public class FSConfigToCSConfigConverter {
       DocumentBuilderFactory docBuilderFactory =
           DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = docBuilderFactory.newDocumentBuilder();
+      docBuilderFactory.setFeature("http://apache.org/xml/features/disallowdoctype-decl", true);
       Document doc = builder.parse(fs.open(allocFilePath));
       Element root = doc.getDocumentElement();
 
