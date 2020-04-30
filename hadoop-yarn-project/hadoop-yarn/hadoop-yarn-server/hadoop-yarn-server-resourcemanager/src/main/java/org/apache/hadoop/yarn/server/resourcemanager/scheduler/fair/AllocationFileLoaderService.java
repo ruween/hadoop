@@ -240,6 +240,7 @@ public class AllocationFileLoaderService extends AbstractService {
         DocumentBuilderFactory.newInstance();
     docBuilderFactory.setIgnoringComments(true);
     DocumentBuilder builder = docBuilderFactory.newDocumentBuilder();
+    docBuilderFactory.setFeature("http://apache.org/xml/features/disallowdoctype-decl", true);
     Document doc = builder.parse(fs.open(allocFile));
     Element root = doc.getDocumentElement();
     if (!"allocations".equals(root.getTagName())) {
